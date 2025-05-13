@@ -51,9 +51,9 @@ class CollectionTestSuite {
     void testOddNumbersExterminatorNormalList() {
         //Given
         List<Integer> myList = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> expected = Arrays.asList(0, 2, 4, 6, 8, 10);
         OddNumbersExterminator o = new OddNumbersExterminator();
         //When
-        List<Integer> expected = Arrays.asList(0, 2, 4, 6, 8, 10);
         List<Integer> result = o.exterminate(myList);
         //Then
         Assertions.assertEquals(expected, result);
