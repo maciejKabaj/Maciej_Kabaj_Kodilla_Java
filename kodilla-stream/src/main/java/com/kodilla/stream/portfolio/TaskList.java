@@ -45,4 +45,9 @@ public class TaskList {
         TaskList taskList = (TaskList) o;
         return Objects.equals(name, taskList.name);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(name);
+    }
 }
