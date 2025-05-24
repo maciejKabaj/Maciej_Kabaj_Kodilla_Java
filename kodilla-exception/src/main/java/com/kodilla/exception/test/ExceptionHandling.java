@@ -15,9 +15,31 @@ public class ExceptionHandling {
             System.out.println("End of program");
         }
 
+        //Should throw an exception
+        try {
+            System.out.println(secondChallenge.probablyIWillThrowException(2, 2));
+        }
+        catch (Exception e) {
+            System.out.println("Program has an issue: " + e);
+        }
+        finally {
+            System.out.println("End of program");
+        }
+
+        //Should throw an exception
+        try {
+            System.out.println(secondChallenge.probablyIWillThrowException(0.99, 2));
+        }
+        catch (Exception e) {
+            System.out.println("Program has an issue: " + e);
+        }
+        finally {
+            System.out.println("End of program");
+        }
+
         //Should return "Done!"
         try {
-            System.out.println(secondChallenge.probablyIWillThrowException(1.5, 100));
+            System.out.println(secondChallenge.probablyIWillThrowException(1.5, 2));
         }
         catch (Exception e) {
             System.out.println("Program has an issue: " + e);
