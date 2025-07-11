@@ -1,4 +1,7 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.model;
+
+import com.kodilla.good.patterns.challenges.deliveries.DeliveryMethod;
+import com.kodilla.good.patterns.challenges.payments.PaymentMethod;
 
 public class ProductOrderRequest {
     private CustomerData customerData;

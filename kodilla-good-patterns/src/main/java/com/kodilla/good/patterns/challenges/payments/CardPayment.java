@@ -1,6 +1,6 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.payments;
 
-public class CashPayment implements PaymentMethod {
+public class CardPayment implements PaymentMethod {
     @Override
     public boolean processPayment() {
         return true;
@@ -8,6 +8,6 @@ public class CashPayment implements PaymentMethod {
 
     @Override
     public PaymentType getPaymentMethod() {
-        return PaymentType.CASH;
+        return PaymentType.CARD;
     }
 }

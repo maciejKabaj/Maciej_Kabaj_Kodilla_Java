@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.payments;
 
 public class BlikPayment implements PaymentMethod {
     @Override

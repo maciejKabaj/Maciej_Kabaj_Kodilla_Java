@@ -1,5 +1,17 @@
 package com.kodilla.good.patterns.challenges;
 
+import com.kodilla.good.patterns.challenges.deliveries.DeliveryMethod;
+import com.kodilla.good.patterns.challenges.deliveries.ParcelLockerDelivery;
+import com.kodilla.good.patterns.challenges.dto.ProductOrderDTO;
+import com.kodilla.good.patterns.challenges.information.EmailInformationService;
+import com.kodilla.good.patterns.challenges.information.InformationService;
+import com.kodilla.good.patterns.challenges.model.Address;
+import com.kodilla.good.patterns.challenges.model.CustomerData;
+import com.kodilla.good.patterns.challenges.model.Product;
+import com.kodilla.good.patterns.challenges.model.ProductOrderRequest;
+import com.kodilla.good.patterns.challenges.payments.CardPayment;
+import com.kodilla.good.patterns.challenges.payments.PaymentMethod;
+
 public class Application {
     public static void main(String[] args) {
         //Task 12.1
