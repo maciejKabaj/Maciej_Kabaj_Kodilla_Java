@@ -31,10 +31,4 @@ public class MovieStore {
         if (n == 0) return 1;
         return n == 1 ? 1 : n * countFactorial(n - 1);
     }
-
-    public static void main(String[] args) {
-        MovieStore movieStore = new MovieStore();
-        System.out.println(movieStore.getMoviesSeparatedByExclamationMark());
-        System.out.println(movieStore.countFactorial(4));
-    }
 }
