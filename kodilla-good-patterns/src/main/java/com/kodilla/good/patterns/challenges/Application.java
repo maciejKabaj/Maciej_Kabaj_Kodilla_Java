@@ -31,7 +31,6 @@ public class Application {
                 "123456789");
         ProductOrderDTO result = getProductOrderDTO(customerData);
         System.out.println("Order placed: " + result.isOrdered());
-
     }
 
     private static ProductOrderDTO getProductOrderDTO(CustomerData customerData) {
