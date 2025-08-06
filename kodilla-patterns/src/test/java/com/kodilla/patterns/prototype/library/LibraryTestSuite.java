@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class LibraryTestSuite {
 
-    private static Library library = new Library("Test Library");
+    private final static Library library = new Library("Test Library");
 
     @BeforeAll
     static void setUpLibrary() {
