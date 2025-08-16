@@ -1,0 +1,41 @@
+CREATE TABLE ISSUESLISTS (
+    ID SERIAL PRIMARY KEY,
+    NAME VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE ISSUES (
+    ID SERIAL PRIMARY KEY,
+    ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+    SUMMARY VARCHAR(100) NOT NULL,
+    DESCRIPTION VARCHAR(100) NOT NULL,
+    USER_ID_ASSIGNEDTO BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID),
+    FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS(ID)
+);
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES 
+    ('ToDo'),
+    ('In progress'),
+    ('Done');
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES
+
+(1, 'Fix login bug', 'Users cannot log in with correct credentials.', 1),
+(1, 'Create wireframes', 'Prepare wireframes for dashboard layout.', 2),
+(1, 'Write user stories', 'Document user stories for sprint planning.', 3),
+(1, 'Plan sprint 1', 'Define goals and tasks for sprint 1.', 4),
+(1, 'Set up Git repository', 'Initialize GitHub repo with README and .gitignore.', 5),
+
+(2, 'Build login form', 'Develop HTML/CSS login interface.', 6),
+(2, 'Implement API authentication', 'Develop backend login endpoint.', 7),
+(2, 'Design logo', 'Create high-res logo for app branding.', 8),
+(2, 'Configure CI pipeline', 'Set up Jenkins for automated builds.', 9),
+(2, 'Write unit tests', 'Add tests for user registration module.', 10),
+
+(3, 'Create database schema', 'Define tables and foreign key relationships.', 11),
+(3, 'Install MySQL server', 'Set up MySQL locally for development.', 12),
+(3, 'Configure IntelliJ project', 'Project builds successfully and uses Maven.', 13),
+(3, 'Complete team onboarding', 'New devs added to repo and Slack.', 14),
+(3, 'Draft project plan', 'Initial project roadmap created and reviewed.', 15);
