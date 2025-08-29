@@ -5,14 +5,21 @@ import com.kodilla.hibernate.manytomany.Employee;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Transactional
 @SpringBootTest
 class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
+
+    @Autowired
+    private EmployeeDao employeeDao;
 
     @Test
     void testSaveManyToMany() {
@@ -58,5 +65,28 @@ class CompanyDaoTestSuite {
         //} catch (Exception e) {
         //    //do nothing
         //}
+    }
+
+    @Test
+    void testFindByLastname() {
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        employeeDao.save(johnSmith);
+        //When
+        List<Employee> result = employeeDao.findByLastname("Smith");
+        //Then
+        assertEquals("Smith", result.get(0).getLastname());
+        assertEquals("John", result.get(0).getFirstname());
+    }
+
+    @Test
+    void testFindByFirstThreeCompanyNameLetters() {
+        //Given
+        Company softwareMachine = new Company("Software Machine");
+        companyDao.save(softwareMachine);
+        //When
+        List<Company> result = companyDao.findByFirstThreeCompanyNameLetters("Sof");
+        //Then
+        assertEquals("Software Machine", result.get(0).getName());
     }
 }
