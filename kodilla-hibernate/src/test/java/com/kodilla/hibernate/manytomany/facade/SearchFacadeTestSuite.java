@@ -64,7 +64,7 @@ public class SearchFacadeTestSuite {
 
     @Test
     void shouldThrowExceptionWhenNoCompanies() {
-        //Then
+        //When&Then
         Exception exception = assertThrows(SearchProcessingException.class, () -> {
             searchFacade.findCompaniesByNameFragment("xyz");
         });
@@ -73,7 +73,7 @@ public class SearchFacadeTestSuite {
 
     @Test
     void shouldThrowExceptionWhenNoEmployees() {
-        //Then
+        //When&Then
         Exception exception = assertThrows(SearchProcessingException.class, () -> {
             searchFacade.findEmployeesByNameFragment("xyz");
         });
